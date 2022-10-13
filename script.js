@@ -1,5 +1,3 @@
-//HÄMTAR ELEMENT
-
 const validationForm = document.querySelector('#validationForm');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
@@ -12,7 +10,6 @@ const regName = /^[A-Za-z\s]+$/;
 const regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
-//FUNKTIONER FÖR SET ERROR OCH SET SUCESS
 
 const setError = () => {
     p.classList.remove('d-none');
@@ -25,7 +22,6 @@ const setSucess = () =>{
     return true;
 }
 
-//FUNKTIONEN FÖR VALIDERING AV INPUT
 
 const validateText = () => {
 
