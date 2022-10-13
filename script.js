@@ -45,8 +45,8 @@ else{
     setSucess();
 }
 
-if(email.value.trim() === ''){
-    setError(input);
+if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value.trim())){
+    setError();
     console.log('Något gick fel, email fältet måste vara ifyllt korrekt');
 }
 else{
@@ -61,7 +61,7 @@ else{
     setSucess();
 }
 if(repeatPassword.value.trim() === '' || repeatPassword.value.length < 6){
-    setError(input);
+    setError();
     console.log('Något gick fel, repeatPassword måste vara ifyllt korrekt');
 }
 else{
@@ -77,7 +77,7 @@ else {
     setSucess();
     
 }
-if(checkbox.checked  && repeatPassword.value.length > 6 && password.value.length > 6 && password.value.trim() === repeatPassword.value.trim() && email.value.trim() !== '' && lastName.value.length > 2 && firstName.value.length > 2){
+if(checkbox.checked  && repeatPassword.value.length > 6 && password.value.length > 6 && password.value.trim() === repeatPassword.value.trim() && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value.trim()) && lastName.value.length > 2 && firstName.value.length > 2){
     console.log('ALLT STÄMMER')
 const user = {
     firstName: firstName.value,
