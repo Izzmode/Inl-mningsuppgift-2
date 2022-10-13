@@ -26,7 +26,7 @@ const setSucess = () =>{
 const validateText = () => {
 
 
-if(firstName.value.trim() === '' || firstName.value.length < 2 || !regName.test(firstName.value.trim())){
+if(firstName.value.length < 2 || !regName.test(firstName.value.trim())){
 
     setError();
     console.log('Något gick fel, firstName fältet måste vara ifyllt korrekt');
@@ -35,7 +35,7 @@ else{
     setSucess();
 }
 
-if(lastName.value.trim() === '' || lastName.value.length < 2 || !regName.test(lastName.value.trim())){
+if(lastName.value.length < 2 || !regName.test(lastName.value.trim())){
     setError();
     console.log('Något gick fel, lastName fältet måste vara ifyllt korrekt');
 }
