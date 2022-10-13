@@ -8,6 +8,8 @@ const password = document.querySelector('#password');
 const repeatPassword = document.querySelector('#repeatPassword');
 const checkbox = document.querySelector('#terms');
 const p = document.querySelector('#errorMessage');
+const regName = /^[A-Za-z\s]+$/;
+const regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
 //FUNKTIONER FÖR SET ERROR OCH SET SUCESS
@@ -28,7 +30,7 @@ const setSucess = () =>{
 const validateText = () => {
 
 
-if(firstName.value.trim() === '' || firstName.value.length < 2){
+if(firstName.value.trim() === '' || firstName.value.length < 2 || !regName.test(firstName.value.trim())){
 
     setError();
     console.log('Något gick fel, firstName fältet måste vara ifyllt korrekt');
@@ -37,7 +39,7 @@ else{
     setSucess();
 }
 
-if(lastName.value.trim() === '' || lastName.value.length < 2){
+if(lastName.value.trim() === '' || lastName.value.length < 2 || !regName.test(lastName.value.trim())){
     setError();
     console.log('Något gick fel, lastName fältet måste vara ifyllt korrekt');
 }
@@ -45,7 +47,7 @@ else{
     setSucess();
 }
 
-if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value.trim())){
+if(!regEmail.test(email.value.trim())){
     setError();
     console.log('Något gick fel, email fältet måste vara ifyllt korrekt');
 }
@@ -77,7 +79,7 @@ else {
     setSucess();
     
 }
-if(checkbox.checked  && repeatPassword.value.length > 6 && password.value.length > 6 && password.value.trim() === repeatPassword.value.trim() && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value.trim()) && lastName.value.length > 2 && firstName.value.length > 2){
+if(checkbox.checked  && repeatPassword.value.length > 6 && password.value.length > 6 && password.value.trim() === repeatPassword.value.trim() && regEmail.test(email.value.trim()) && lastName.value.length > 2 && regName.test(lastName.value.trim()) && firstName.value.length > 2 && regName.test(firstName.value.trim())){
     console.log('ALLT STÄMMER')
 const user = {
     firstName: firstName.value,
