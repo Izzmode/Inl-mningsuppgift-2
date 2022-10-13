@@ -75,7 +75,7 @@ else {
     setSucess();
     
 }
-if(checkbox.checked  && repeatPassword.value.length > 6 && password.value.length > 6 && password.value.trim() === repeatPassword.value.trim() && regEmail.test(email.value.trim()) && lastName.value.length > 2 && regName.test(lastName.value.trim()) && firstName.value.length > 2 && regName.test(firstName.value.trim())){
+if(checkbox.checked && repeatPassword.value.length >= 6 && password.value.length >= 6 && password.value.trim() === repeatPassword.value.trim() && regEmail.test(email.value.trim()) && lastName.value.length >= 2 && regName.test(lastName.value.trim()) && firstName.value.length >= 2 && regName.test(firstName.value.trim())){
     console.log('ALLT STÄMMER')
 const user = {
     firstName: firstName.value,
